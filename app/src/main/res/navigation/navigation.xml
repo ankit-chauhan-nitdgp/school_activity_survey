@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.hajmola.up.fragments.LoginFragment"
+        android:label="Login">
+
+        <action
+            android:id="@+id/action_loginFragment_to_MainMenuPage"
+            app:destination="@+id/mainMenuFragment" />
+
+        <action
+            android:id="@+id/action_loginFragment_to_AdminHomePage"
+            app:destination="@+id/adminHomeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="com.hajmola.up.fragments.MainMenuFragment"
+        android:label="MainMenu">
+
+        <action
+            android:id="@+id/action_mainMenu_to_Login"
+            app:destination="@+id/loginFragment" />
+
+        <action
+            android:id="@+id/action_mainMenu_to_AddSchool"
+            app:destination="@+id/addSchoolFragment" />
+
+        <action
+            android:id="@+id/action_mainMenu_to_SchoolHome"
+            app:destination="@+id/schoolHomeFragment" />
+
+        <action
+            android:id="@+id/action_mainMenu_to_UserSchoolList"
+            app:destination="@+id/userSchoolListFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/adminHomeFragment"
+        android:name="com.hajmola.up.fragments.AdminHomeFragment"
+        android:label="AdminHome">
+
+        <action
+            android:id="@+id/action_adminHome_to_MainMenuPage"
+            app:destination="@+id/mainMenuFragment" />
+
+        <action
+            android:id="@+id/action_adminHome_to_RegisterPage"
+            app:destination="@+id/registerFragment" />
+
+        <action
+            android:id="@+id/action_adminHome_to_FetchDataPage"
+            app:destination="@+id/fetchSchoolDataFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.hajmola.up.fragments.RegisterUserFragment"
+        android:label="Register">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/addSchoolFragment"
+        android:name="com.hajmola.up.fragments.AddSchoolFragment"
+        android:label="AddSchool">
+
+        <argument android:name="CITY_NAME"
+            android:defaultValue="None"/>
+
+        <action
+            android:id="@+id/action_addSchool_to_SchoolHome"
+            app:destination="@+id/schoolHomeFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/schoolHomeFragment"
+        android:name="com.hajmola.up.fragments.SchoolHomeFragment"
+        android:label="SchoolHome">
+
+        <argument android:name="SCHOOL_NAME"
+            android:defaultValue="None"/>
+
+        <action
+            android:id="@+id/action_schoolHome_to_MainMenu"
+            app:destination="@+id/mainMenuFragment" />
+
+        <action
+            android:id="@+id/action_schoolHome_to_SchoolDetails"
+            app:destination="@+id/schoolDetailsFragment" />
+
+        <action
+            android:id="@+id/action_schoolHome_to_SchoolScp"
+            app:destination="@+id/schoolScpFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/schoolDetailsFragment"
+        android:name="com.hajmola.up.fragments.SchoolDetailsFragment"
+        android:label="SchoolDetails">
+    </fragment>
+
+    <fragment
+        android:id="@+id/schoolScpFragment"
+        android:name="com.hajmola.up.fragments.SchoolScpFragment"
+        android:label="SchoolScp">
+    </fragment>
+
+    <fragment
+        android:id="@+id/fetchSchoolDataFragment"
+        android:name="com.hajmola.up.fragments.SchoolDataFetchFragment"
+        android:label="SchoolListFetch">
+
+        <action
+            android:id="@+id/action_fetchSchool_to_schoolListFragment"
+            app:destination="@+id/schoolListFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/schoolListFragment"
+        android:name="com.hajmola.up.fragments.SchoolListFragment"
+        android:label="AdminDashBoard">
+
+        <argument android:name="FROM_FETCH_PAGE"
+            app:argType="boolean"
+            android:defaultValue="false"/>
+
+        <action
+            android:id="@+id/action_schoolListFragment_to_showSchoolDataFragment"
+            app:destination="@+id/showSchoolDataFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/showSchoolDataFragment"
+        android:name="com.hajmola.up.fragments.ShowSchoolDataFragment"
+        android:label="ShowSchoolData">
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/userSchoolListFragment"
+        android:name="com.hajmola.up.fragments.UserSchoolListFragment"
+        android:label="UserSchoolListData">
+    </fragment>
+
+
+</navigation>

@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.LoginFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/schoolDataTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="School Details"
+        android:textStyle="bold"
+        app:titleTextColor="@color/white"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        android:textSize="24sp"
+        android:gravity="center_vertical | start"
+        android:background="@color/colorPrimaryVariant"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvName"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:paddingHorizontal="16dp"
+        android:textSize="20sp"
+        android:text="School Name"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/schoolDataTopBar" />
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/tvName"
+    android:scrollbars="none"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="?android:attr/dividerVertical"
+        android:showDividers="middle"
+        android:paddingBottom="150dp">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:paddingVertical="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="City"
+            android:paddingVertical="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="School Name"
+            android:paddingVertical="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPincode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:paddingVertical="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:paddingVertical="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBoard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Board"
+            android:paddingVertical="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUptoClass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Up to class"
+            android:paddingVertical="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTotalStrength"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:paddingVertical="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvStrength8to12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Board"
+            android:paddingVertical="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/avgSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Avg. sec per class"
+            android:paddingVertical="4dp"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/avgFee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Avg. fee"
+            android:paddingVertical="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPrinciName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Board"
+            android:paddingVertical="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPrinciEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Avg. sec per class"
+            android:paddingVertical="4dp"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPrinciContact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Avg. fee"
+            android:paddingVertical="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAuthName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Board"
+            android:paddingVertical="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAuthEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Avg. sec per class"
+            android:paddingVertical="4dp"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAuthContact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Auth Contact"
+            android:paddingVertical="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPermissionGiven"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Board"
+            android:paddingVertical="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvActDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Avg. sec per class"
+            android:paddingVertical="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEstSession"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Est. Sessions"
+            android:paddingVertical="4dp"/>
+
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvActStartTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Auth Contact"
+            android:paddingVertical="4dp"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvActEndTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:text="Avg. sec per class" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUnitDistributed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Unit distributed"
+            android:paddingVertical="4dp"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvActArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Act. Area"
+            android:paddingVertical="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUploadedBy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Uploaded By"
+            android:paddingVertical="4dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUploadedAt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Uploaded At"
+            android:paddingVertical="4dp"/>
+
+        <!-- Repeat for other text fields... -->
+
+        <!-- Example for URI field with View button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingVertical="4dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="School Front" />
+
+            <Button
+                android:id="@+id/btnSchoolFront"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View"
+                android:backgroundTint="@color/colorPrimary"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingVertical="4dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="School Back" />
+
+            <Button
+                android:id="@+id/btnSchoolBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View"
+                android:backgroundTint="@color/colorPrimary" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingVertical="4dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Activity 1" />
+
+            <Button
+                android:id="@+id/btnActivity1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View"
+                android:backgroundTint="@color/colorPrimary" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingVertical="4dp">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Activity 2" />
+
+            <Button
+                android:id="@+id/btnActivity2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View"
+                android:backgroundTint="@color/colorPrimary" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingVertical="4dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Activity 3"
+                android:backgroundTint="@color/colorPrimary" />
+
+            <Button
+                android:id="@+id/btnActivity3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View"
+                android:backgroundTint="@color/colorPrimary" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingVertical="4dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Activity 4" />
+
+            <Button
+                android:id="@+id/btnActivity4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View"
+                android:backgroundTint="@color/colorPrimary"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingVertical="4dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Activity 5" />
+
+            <Button
+                android:id="@+id/btnActivity5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View"
+                android:backgroundTint="@color/colorPrimary" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingVertical="4dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Activity 6" />
+
+            <Button
+                android:id="@+id/btnActivity6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View"
+                android:backgroundTint="@color/colorPrimary" />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingVertical="4dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Acknowledgement Letter" />
+
+            <Button
+                android:id="@+id/btnAckLetter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View"
+                android:backgroundTint="@color/colorPrimary" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingVertical="4dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Permission Letter" />
+
+            <Button
+                android:id="@+id/btnPermissionLetter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View"
+                android:backgroundTint="@color/colorPrimary" />
+        </LinearLayout>
+
+        <!-- Repeat same pattern for uri_front, uri_back, activity uris... -->
+
+    </LinearLayout>
+</ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

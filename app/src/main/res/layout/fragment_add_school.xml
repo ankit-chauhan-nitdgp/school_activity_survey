@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/addSchoolTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/colorPrimaryVariant"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="School"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:layout_weight="1"
+            android:gravity="center_vertical | start" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/addSchoolButton"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_add"
+            android:tint="@color/colorSecondary"
+            android:gravity="end"
+            />
+
+    </LinearLayout>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/schoolListHeaderTV"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:paddingHorizontal="16dp"
+        android:textSize="20sp"
+        android:text="School List"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/addSchoolTopBar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/schoolListRV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/schoolListHeaderTV" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

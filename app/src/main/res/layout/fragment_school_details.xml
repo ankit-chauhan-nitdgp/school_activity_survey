@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/schoolDetailsTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryVariant"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="Hajmola School Activity"
+        app:titleTextColor="@color/white" />
+
+    <ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/schoolDetailsTV"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:paddingHorizontal="16dp"
+                android:text="School Details"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <com.hajmola.up.views.SchoolDetailsItemView
+                android:id="@+id/schoolName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:hintText=""
+                app:labelText="School Name" />
+
+            <include
+                android:id="@+id/field_school_address"
+                layout="@layout/field_school_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp" />
+
+<!--            <com.hajmola.up.views.SchoolDetailsItemView-->
+<!--                android:id="@+id/schoolCity"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="8dp"-->
+<!--                app:hintText=""-->
+<!--                app:labelText="City" />-->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/cityTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="City"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/spinnerLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:background="@drawable/bg_rectangle"
+                    app:layout_constraintTop_toBottomOf="@id/cityTV"
+                    android:layout_margin="8dp"
+                    android:layout_marginTop="32dp">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/selectCityTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:spinnerMode="dropdown"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.hajmola.up.views.SchoolDetailsItemView
+                android:id="@+id/schoolState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:hintText=""
+                app:labelText="State" />
+
+            <com.hajmola.up.views.SchoolDetailsItemView
+                android:id="@+id/schoolPinCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:hintText=""
+                app:inputType="numberType"
+                app:labelText="PinCode" />
+
+            <com.hajmola.up.views.SchoolDetailsItemView
+                android:id="@+id/schoolEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:hintText=""
+                app:labelText="Email ID(school)" />
+
+            <com.hajmola.up.views.SchoolDetailsItemView
+                android:id="@+id/schoolBoard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:hintText=""
+                app:labelText="Board" />
+
+            <com.hajmola.up.views.SchoolDetailsItemView
+                android:id="@+id/uptoClass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:hintText=""
+                app:inputType="numberType"
+                app:labelText="Up to class" />
+
+            <com.hajmola.up.views.SchoolDetailsItemView
+                android:id="@+id/strengthTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:hintText=""
+                app:inputType="numberType"
+                app:labelText="Total Strength of school" />
+
+            <com.hajmola.up.views.SchoolDetailsItemView
+                android:id="@+id/strength8to12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:hintText=""
+                app:inputType="numberType"
+                app:labelText="Total Strength of STD 8 - STD12" />
+
+            <com.hajmola.up.views.SchoolDetailsItemView
+                android:id="@+id/avgSecPerClass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:hintText=""
+                app:inputType="numberType"
+                app:labelText="Avg Section Per Class" />
+
+            <com.hajmola.up.views.SchoolDetailsItemView
+                android:id="@+id/avgTutionFees"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:hintText=""
+                app:inputType="numberType"
+                app:labelText="Avg Tution Fees Rs" />
+
+            <com.hajmola.up.views.MediaUploadView
+                android:id="@+id/schoolFrontPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                android:layout_marginHorizontal="12dp"
+                app:mediaLabel="School Front Photo" />
+
+            <com.hajmola.up.views.MediaUploadView
+                android:id="@+id/schoolBackPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                android:layout_marginHorizontal="12dp"
+                app:mediaLabel="School Back Photo" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/principalTV"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:paddingHorizontal="16dp"
+                android:text="Principal"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <com.hajmola.up.views.SchoolDetailsItemView
+                android:id="@+id/principalName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:hintText=""
+                app:labelText="Principal Name" />
+
+            <com.hajmola.up.views.SchoolDetailsItemView
+                android:id="@+id/principalContactNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:inputType="numberType"
+                app:hintText=""
+                app:labelText="Contact Number" />
+
+            <com.hajmola.up.views.SchoolDetailsItemView
+                android:id="@+id/principalEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:hintText=""
+                app:labelText="Contact Email" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/approvingAuthTV"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:paddingHorizontal="16dp"
+                android:text="Approving Authority"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <com.hajmola.up.views.SchoolDetailsItemView
+                android:id="@+id/authorityName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:hintText=""
+                app:labelText="Contact Person" />
+
+            <com.hajmola.up.views.SchoolDetailsItemView
+                android:id="@+id/authorityContactNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:inputType="numberType"
+                app:hintText=""
+                app:labelText="Contact Number" />
+
+            <com.hajmola.up.views.SchoolDetailsItemView
+                android:id="@+id/authorityEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:hintText=""
+                app:labelText="Contact Email" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <!-- permission received-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="8dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/permissionYesNoTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Permission Received"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="22dp">
+
+            <RadioButton
+                android:id="@+id/yesReceived"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="Yes"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:buttonTint="@color/radio_button_tint"/>
+
+            <RadioButton
+                android:id="@+id/noReceived"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="NO"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:buttonTint="@color/radio_button_tint"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- activity dates-->
+    <include
+        android:id="@+id/fields_activity_dates"
+        layout="@layout/fields_activity_dates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"/>
+
+    <com.hajmola.up.views.SchoolDetailsItemView
+        android:id="@+id/unitsDistributed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:hintText=""
+        app:inputType="numberType"
+        app:labelText="Units Distributed" />
+
+    <!-- activity type-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/activityAreaTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:text="Activity Area"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="22dp">
+
+            <RadioButton
+                android:id="@+id/classroomType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:textColor="@color/black"
+                android:text="Classroom"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:buttonTint="@color/radio_button_tint"/>
+
+            <RadioButton
+                android:id="@+id/auditoriumType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Auditorium"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:buttonTint="@color/radio_button_tint"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="22dp">
+
+            <RadioButton
+                android:id="@+id/otherType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Other"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:buttonTint="@color/radio_button_tint"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/otherTypeET"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:hint="other area name"
+                android:enabled="false"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.hajmola.up.views.MediaUploadView
+        android:id="@+id/activity1Photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:layout_marginHorizontal="12dp"
+        app:mediaLabel="Activity 1 Photo" />
+
+    <com.hajmola.up.views.MediaUploadView
+        android:id="@+id/activity2Photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:layout_marginHorizontal="12dp"
+        app:mediaLabel="Activity 2 Photo" />
+
+    <com.hajmola.up.views.MediaUploadView
+        android:id="@+id/activity3Photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:layout_marginHorizontal="12dp"
+        app:mediaLabel="Activity 3 Photo" />
+
+    <com.hajmola.up.views.MediaUploadView
+        android:id="@+id/activity4Photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:layout_marginHorizontal="12dp"
+        app:mediaLabel="Activity 4 Photo" />
+
+    <com.hajmola.up.views.MediaUploadView
+        android:id="@+id/activity5Photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:layout_marginHorizontal="12dp"
+        app:mediaLabel="Activity 5 Photo" />
+
+    <com.hajmola.up.views.MediaUploadView
+        android:id="@+id/activity6Photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:layout_marginHorizontal="12dp"
+        app:mediaLabel="Activity 6 Photo" />
+
+    <com.hajmola.up.views.MediaUploadView
+        android:id="@+id/acknowledgementPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:layout_marginHorizontal="12dp"
+        app:mediaLabel="Acknowledgement Letter" />
+
+    <com.hajmola.up.views.MediaUploadView
+        android:id="@+id/permissionLetterPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:layout_marginHorizontal="12dp"
+        app:mediaLabel="Permission Letter" />
+</LinearLayout>

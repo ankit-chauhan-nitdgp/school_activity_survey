@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/fetchDataTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryVariant"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="DABUR - SCP"
+        app:titleTextColor="@color/white" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/fetchHeaderTV"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:paddingHorizontal="16dp"
+        android:text="Fetch Data"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/fetchDataTopBar" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/spinnerLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/bg_rectangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fetchHeaderTV">
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/selectCityTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/spinnerLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_rectangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinnerLayout1">
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/selectUploadedByTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/datePickerTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_rectangle"
+        android:paddingHorizontal="12dp"
+        android:text="Select Date"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/spinnerLayout2" />
+
+    <LinearLayout
+        android:id="@+id/dateRange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/datePickerTV">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/startDatePickerTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_rectangle"
+            android:paddingHorizontal="12dp"
+            android:text="Start Date"
+            android:textSize="16sp"
+            android:layout_weight="1"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/endDatePickerTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_rectangle"
+            android:paddingHorizontal="12dp"
+            android:text="End Date"
+            android:layout_weight="1"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/fetchEnterTV"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:paddingHorizontal="16dp"
+        android:text="Fetch Data"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/dateRange" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/fetchHintTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:layout_marginTop="4dp"
+        android:text="* all fields are optional"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fetchEnterTV" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

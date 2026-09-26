@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.LoginFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/registerTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryVariant"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="DABUR - SCP"
+        app:titleTextColor="@color/white" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/registerHeaderTV"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:paddingHorizontal="16dp"
+        android:text="Register User"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/registerTopBar" />
+
+    <LinearLayout
+        android:id="@+id/nameTab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/registerHeaderTV">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/nameET"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:textColor="@color/black"
+            android:background="@drawable/bg_rectangle"
+            android:hint="Enter Name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/userRole"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:layout_marginHorizontal="16dp"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="4dp"
+            android:layout_gravity="center"
+            android:text="User"
+            android:textColor="@color/white"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/userNameET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="32dp"
+        android:background="@drawable/bg_rectangle"
+        android:hint="Enter Username"
+        app:layout_constraintTop_toBottomOf="@id/nameTab" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/passwordET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="32dp"
+        android:background="@drawable/bg_rectangle"
+        android:hint="Enter Password"
+        app:layout_constraintTop_toBottomOf="@id/userNameET" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/registerEnterTV"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:paddingHorizontal="16dp"
+        android:text="Register As User"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/passwordET" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

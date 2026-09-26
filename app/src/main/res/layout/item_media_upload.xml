@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mediaTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="School Name"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/mediaPreview"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/bg_rectangle"
+        app:layout_constraintTop_toBottomOf="@id/mediaTV"
+        android:layout_marginTop="12dp"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/uploadButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorOnSecondary"
+        android:background="@drawable/bg_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/mediaPreview"
+        app:layout_constraintBottom_toBottomOf="@id/mediaPreview"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

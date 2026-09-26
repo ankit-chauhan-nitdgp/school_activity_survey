@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LabeledEditText">
+        <attr name="labelText" format="string"/>
+        <attr name="hintText" format="string"/>
+        <attr name="inputType" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="MediaUploadAttributes">
+        <attr name="mediaLabel" format="string"/>
+
+    </declare-styleable>
+</resources>

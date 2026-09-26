@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.HajmolaUP" parent="Base.Theme.HajmolaUP">
+        <item name="android:statusBarColor">#E11E26</item>
+        <!-- Optional: Light or dark icons -->
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/addressHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="School Address"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginStart="12dp"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etLine1Address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Line 1"
+        android:textColor="@color/black"
+        android:background="@drawable/bg_rectangle"
+        android:layout_marginTop="12dp"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etLine2Address"
+        android:layout_width="match_parent"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        android:hint="Line 2"
+        android:background="@drawable/bg_rectangle"
+        android:layout_marginTop="8dp"
+        />
+</LinearLayout>
