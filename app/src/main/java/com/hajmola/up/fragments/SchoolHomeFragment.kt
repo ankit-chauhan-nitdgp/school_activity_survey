@@ -47,7 +47,8 @@ class SchoolHomeFragment : Fragment() {
         }
 
         binding.closeButton.setOnClickListener {
-            findNavController().navigateWithBackStackClear(R.id.action_schoolHome_to_MainMenu, args = null, R.id.schoolHomeFragment)
+//            findNavController().navigateWithBackStackClear(R.id.action_schoolHome_to_MainMenu, args = null, R.id.schoolHomeFragment)
+                requireActivity().onBackPressedDispatcher.onBackPressed()
         }
 
         return binding.root
