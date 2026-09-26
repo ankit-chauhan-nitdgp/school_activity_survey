@@ -1,5 +1,6 @@
 package com.hajmola.up.fragments
 
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.AppCompatSpinner
@@ -63,9 +65,17 @@ class SchoolDataFetchFragment : Fragment() {
 
         val spinnerCity: AppCompatSpinner = binding.selectCityTV
 
-        val adapterCity =
-            ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, viewmodel.getFetchedCityList()!!)
-
+        val adapterCity = object : ArrayAdapter<String>(
+            requireContext(),
+            android.R.layout.simple_spinner_item,
+            viewmodel.getFetchedCityList()!!
+        ) {
+            override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+                val v = super.getView(position, convertView, parent) as TextView
+                v.setTextColor(Color.BLACK)
+                return v
+            }
+        }
         adapterCity.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerCity.adapter = adapterCity
         spinnerCity.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -83,8 +93,17 @@ class SchoolDataFetchFragment : Fragment() {
         for (user in userNames){
             array.add(user)
         }
-        val adapterUploadedBy =
-            ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, array.toTypedArray())
+        val adapterUploadedBy = object : ArrayAdapter<String>(
+            requireContext(),
+            android.R.layout.simple_spinner_item,
+            array.toTypedArray()
+        ) {
+            override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+                val v = super.getView(position, convertView, parent) as TextView
+                v.setTextColor(Color.BLACK)
+                return v
+            }
+        }
         adapterUploadedBy.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerUploadedBy.adapter = adapterUploadedBy
         spinnerUploadedBy.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {

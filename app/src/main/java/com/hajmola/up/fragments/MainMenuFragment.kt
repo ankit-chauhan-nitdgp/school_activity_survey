@@ -27,6 +27,9 @@ import com.hajmola.up.utils.Utils.navigateWithSlideAnim
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 @AndroidEntryPoint
 class MainMenuFragment : Fragment() {
@@ -46,15 +49,15 @@ class MainMenuFragment : Fragment() {
             findNavController().navigateWithSlideAnim(R.id.action_mainMenu_to_SchoolHome)
         }
 
-        binding.syncButton.setOnClickListener {
-            val schoolData = viewModel.getSchoolDetailsData()
-            if (schoolData?.school?.name.equals("") || schoolData?.school?.city == "-- Select City") {
-                Toast.makeText(requireContext(), "Fill School Name or City", Toast.LENGTH_LONG)
-                    .show()
-                return@setOnClickListener
-            }
-            viewModel.uploadSchoolInfo(requireContext())
-        }
+//        binding.syncButton.setOnClickListener {
+//            val schoolData = viewModel.getSchoolDetailsData()
+//            if (schoolData?.school?.name.equals("") || schoolData?.school?.city == "-- Select City") {
+//                Toast.makeText(requireContext(), "Fill School Name or City", Toast.LENGTH_LONG)
+//                    .show()
+//                return@setOnClickListener
+//            }
+//            viewModel.uploadSchoolInfo(requireContext())
+//        }
 
         binding.logout.setOnClickListener {
             SessionManager.setLogin(requireContext(), false)
@@ -84,49 +87,55 @@ class MainMenuFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Collect StateFlow safely within the lifecycle
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.uploadState.collect { state ->
-                    when (state) {
-                        is UiState.Loading -> {
-                            binding.syncStatus.text = "Sync Status: Uploading"
-                            binding.syncButton.isEnabled = false
-                        }
+//        // Collect StateFlow safely within the lifecycle
+//        viewLifecycleOwner.lifecycleScope.launch {
+//            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+//                viewModel.uploadState.collect { state ->
+//                    when (state) {
+//                        is UiState.Loading -> {
+//                            binding.syncStatus.text = "Sync Status: Uploading"
+//                            binding.syncButton.isEnabled = false
+//                        }
+//
+//                        is UiState.Success -> {
+//
+//                            viewModel.updateScpDetailsData {
+//                                viewModel.getEmptyScpData()!!
+//                            }
+//                            viewModel.updateSchoolDetailsData {
+//                                viewModel.getEmptySchoolData()!!
+//                            }
+//                            binding.syncStatus.text = "Sync Status: Uploaded Successfully"
+//                            // Clear error state so it doesn't toast again if view recreates
+//                            launch {
+//                                delay(2000)
+//                                // Reset state immediately so back press won't fire this again
+//                                viewModel.resetUploadState()
+//                            }
+//                            binding.syncButton.isEnabled = true
+//                        }
+//
+//                        is UiState.Error -> {
+//                            Log.d(TAG, "msg: ${state.message}")
+//                            binding.syncStatus.text = "Sync Status: Failed to upload"
+//                            binding.syncButton.isEnabled = true
+//                        }
+//
+//                        is UiState.Idle -> {
+//                            // Neutral state, do nothing
+//                            binding.syncStatus.text = "Sync Status: Idle"
+//                            binding.syncButton.isEnabled = true
+//                        }
+//                    }
+//                }
+//            }
+//        }
 
-                        is UiState.Success -> {
-
-                            viewModel.updateScpDetailsData {
-                                viewModel.getEmptyScpData()!!
-                            }
-                            viewModel.updateSchoolDetailsData {
-                                viewModel.getEmptySchoolData()!!
-                            }
-                            binding.syncStatus.text = "Sync Status: Uploaded Successfully"
-                            // Clear error state so it doesn't toast again if view recreates
-                            launch {
-                                delay(2000)
-                                // Reset state immediately so back press won't fire this again
-                                viewModel.resetUploadState()
-                            }
-                            binding.syncButton.isEnabled = true
-                        }
-
-                        is UiState.Error -> {
-                            Log.d(TAG, "msg: ${state.message}")
-                            binding.syncStatus.text = "Sync Status: Failed to upload"
-                            binding.syncButton.isEnabled = true
-                        }
-
-                        is UiState.Idle -> {
-                            // Neutral state, do nothing
-                            binding.syncStatus.text = "Sync Status: Idle"
-                            binding.syncButton.isEnabled = true
-                        }
-                    }
-                }
-            }
-        }
+        val name = SessionManager.getUploader(requireContext())
+        binding.greetings.text = "Hi, $name"
+        val dateFormat = SimpleDateFormat("EEEE, dd MMM yyyy", Locale.getDefault())
+        val formattedDate = dateFormat.format(Date())
+        binding.dateTV.text = formattedDate
 
 
         // Safely collect StateFlow changes within the lifecycle scope
@@ -146,7 +155,6 @@ class MainMenuFragment : Fragment() {
                                         R.id.action_mainMenu_to_UserSchoolList,
                                         args = bundle
                                     )
-
                                 }
                             }
                         }

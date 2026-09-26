@@ -51,12 +51,20 @@
             app:destination="@+id/mainMenuFragment" />
 
         <action
+            android:id="@+id/action_adminHome_to_SchoolHomePage"
+            app:destination="@+id/schoolHomeFragment" />
+
+        <action
             android:id="@+id/action_adminHome_to_RegisterPage"
             app:destination="@+id/registerFragment" />
 
         <action
             android:id="@+id/action_adminHome_to_FetchDataPage"
             app:destination="@+id/fetchSchoolDataFragment" />
+
+        <action
+            android:id="@+id/action_adminHome_to_LoginPage"
+            app:destination="@+id/loginFragment" />
 
     </fragment>
 

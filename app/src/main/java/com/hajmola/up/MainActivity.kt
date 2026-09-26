@@ -45,9 +45,6 @@ class MainActivity : AppCompatActivity() {
 
         checkPermissionsAndPick()
 
-        window.statusBarColor = ContextCompat.getColor(this, R.color.colorPrimaryVariant)
-
-
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
 

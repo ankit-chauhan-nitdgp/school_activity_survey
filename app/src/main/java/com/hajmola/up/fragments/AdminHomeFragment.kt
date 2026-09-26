@@ -16,7 +16,9 @@ import com.hajmola.up.MyViewModel
 import com.hajmola.up.R
 import com.hajmola.up.databinding.FragmentAdminHomeBinding
 import com.hajmola.up.utils.AppConstants
+import com.hajmola.up.utils.SessionManager
 import com.hajmola.up.utils.UiState
+import com.hajmola.up.utils.Utils.navigateWithBackStackClear
 import com.hajmola.up.utils.Utils.navigateWithSlideAnim
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
@@ -41,11 +43,27 @@ class AdminHomeFragment : Fragment() {
         }
 
         binding.ScpMenuButton.setOnClickListener {
-            findNavController().navigateWithSlideAnim(R.id.action_adminHome_to_MainMenuPage)
+            findNavController().navigateWithSlideAnim(R.id.action_adminHome_to_SchoolHomePage)
         }
 
         binding.dashBoardButton.setOnClickListener {
             findNavController().navigateWithSlideAnim(R.id.action_adminHome_to_FetchDataPage)
+        }
+
+        binding.logout.setOnClickListener {
+            SessionManager.setLogin(requireContext(), false)
+            SessionManager.setAdminLogin(requireContext(), false)
+            viewmodel.updateScpDetailsData {
+                viewmodel.getEmptyScpData()!!
+            }
+            viewmodel.updateSchoolDetailsData {
+                viewmodel.getEmptySchoolData()!!
+            }
+            findNavController().navigateWithBackStackClear(
+                R.id.action_adminHome_to_LoginPage,
+                null,
+                R.id.adminHomeFragment
+            )
         }
 
         return binding.root

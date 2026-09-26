@@ -10,9 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:background="@color/colorPrimaryVariant"
-        android:gravity="start|center_vertical"
-        android:paddingStart="32dp"
-        android:text="Hajmola School Activity"
+        android:gravity="center"
+        android:text="HAJMOLA SCHOOL ACTIVITY"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -75,6 +74,21 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/syncButton"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:text="UPLOAD TO SERVER"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ScpCompleteButton" />
+
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/closeButton"
         android:layout_width="match_parent"
         android:layout_height="64dp"
@@ -82,12 +96,12 @@
         android:layout_marginTop="32dp"
         android:background="@color/colorPrimary"
         android:gravity="center"
-        android:text="CLOSE"
+        android:text="BACK TO MAIN MENU"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ScpCompleteButton" />
+        app:layout_constraintTop_toBottomOf="@id/syncButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

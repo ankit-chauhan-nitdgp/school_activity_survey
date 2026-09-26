@@ -5,128 +5,80 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8F9FA"
+    android:background="@drawable/bg_full_page_gradient"
     tools:context=".fragments.LoginFragment">
 
-    <!-- Top Action Bar -->
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/mainMenuTopBar"
-        android:layout_width="0dp"
-        android:layout_height="64dp"
-        android:text="Hajmola School Activity"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:gravity="center_vertical"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp"
-        android:background="@color/colorPrimaryVariant"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-
-
-    <!-- Sub-header / Status Indicator -->
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/mainMenuHeaderTV"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:text="Main Menu"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:background="@color/colorPrimary"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/mainMenuTopBar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageLogo"
-        android:layout_width="match_parent"
+        android:layout_width="128dp"
         android:layout_height="64dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
         android:src="@drawable/launcher_icon_preview"
-        app:layout_constraintTop_toBottomOf="@id/mainMenuHeaderTV"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         />
+
+    <!-- Top Left Item: SCP -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/greetings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="10dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:text="Hi, Kezia"
+        android:drawablePadding="12dp"
+        android:textColor="@color/colorPrimaryVariant"
+        app:layout_constraintTop_toBottomOf="@id/imageLogo"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/dateTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="10dp"
+        android:textSize="14sp"
+        android:text="Monday, 26 Sep 2026"
+        android:drawablePadding="12dp"
+        android:textColor="@color/colorSecondary"
+        app:layout_constraintTop_toBottomOf="@id/greetings"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <!-- 2x2 Grid Layout Core Anchors using ConstraintLayout Chains -->
 
     <!-- Top Left Item: SCP -->
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/ScpButton"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginHorizontal="32dp"
         android:padding="16dp"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:text="SCP"
+        android:text="Start Filling Survey"
         android:drawableTop="@drawable/sample_image"
         android:drawablePadding="12dp"
         android:textColor="@color/black"
         android:gravity="center"
         android:background="@drawable/bg_rectangle"
-        app:layout_constraintTop_toBottomOf="@id/imageLogo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/syncButton"
         app:layout_constraintHorizontal_chainStyle="spread" />
-
-    <!-- Top Right Item: Synchronize -->
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/syncButton"
-        android:layout_width="0dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="20dp"
-        android:padding="16dp"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:text="Synchronize"
-        android:drawableTop="@drawable/sample_image"
-        android:drawablePadding="12dp"
-        android:textColor="@color/black"
-        android:gravity="center"
-        android:background="@drawable/bg_rectangle"
-        app:layout_constraintTop_toBottomOf="@id/imageLogo"
-        app:layout_constraintStart_toEndOf="@id/ScpButton"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-
-    <!-- Prominent Dashboard Status Card -->
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/syncStatus"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:padding="20dp"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:background="@drawable/bg_rectangle"
-        android:text="Sync Status: Idle"
-        android:textColor="@color/black"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/ScpButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
 
     <!-- Bottom Left Item: My Uploads -->
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/myUploads"
         android:layout_width="0dp"
         android:layout_height="120dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginHorizontal="32dp"
         android:padding="16dp"
         android:textSize="16sp"
+        android:layout_marginTop="16dp"
         android:textStyle="bold"
         android:text="My Uploads"
         android:drawableTop="@drawable/sample_image"
@@ -134,29 +86,24 @@
         android:textColor="@color/black"
         android:gravity="center"
         android:background="@drawable/bg_rectangle"
-        app:layout_constraintTop_toBottomOf="@id/syncStatus"
+        app:layout_constraintTop_toBottomOf="@id/ScpButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/logout" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Bottom Right Item: Logout -->
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/logout"
-        android:layout_width="0dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="20dp"
-        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:textSize="16sp"
+        android:layout_margin="32dp"
         android:textStyle="bold"
         android:text="Logout"
-        android:drawableTop="@drawable/sample_image"
-        android:drawablePadding="12dp"
-        android:textColor="@color/black"
         android:gravity="center"
+        android:textColor="@color/colorPrimaryVariant"
         android:background="@drawable/bg_rectangle"
-        app:layout_constraintTop_toBottomOf="@id/syncStatus"
-        app:layout_constraintStart_toEndOf="@id/myUploads"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
